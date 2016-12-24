@@ -225,8 +225,8 @@ class BaseRepository(CustomConfig.ConfigHelperMixin):
                 break
 
             # Apply reverse nametrans and fix serparator.
-            remote_name = local_folder.getvisiblename().replace(
-                local_repo.getsep(), remote_repo.getsep())
+            remote_name = local_folder.getrepository().nametrans(local_folder.getname().replace(
+                local_repo.getsep(), remote_repo.getsep()))
             if local_folder.sync_this and not remote_name in remote_hash.keys():
                 # Would the remote filter out the new folder name? In this case
                 # don't create it.

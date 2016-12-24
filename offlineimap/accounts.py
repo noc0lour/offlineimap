@@ -379,13 +379,13 @@ class SyncableAccount(Account):
                 # their names since this would cause troubles while converting
                 # the name back (from local to remote).
                 sep = localrepos.getsep()
-                if (sep != os.path.sep and
-                    sep != remoterepos.getsep() and
-                    sep in remotefolder.getname()):
-                    self.ui.warn('', "Ignoring folder '%s' due to unsupported "
-                        "'%s' character serving as local separator."%
-                        (remotefolder.getname(), localrepos.getsep()))
-                    continue # Ignore unsupported folder name.
+                # if (sep != os.path.sep and
+                #     sep != remoterepos.getsep() and
+                #     sep in remotefolder.getname()):
+                #     self.ui.warn('', "Ignoring folder '%s' due to unsupported "
+                #         "'%s' character serving as local separator."%
+                #         (remotefolder.getname(), localrepos.getsep()))
+                #     continue # Ignore unsupported folder name.
 
                 localfolder = self.get_local_folder(remotefolder)
                 if not localfolder.sync_this:
